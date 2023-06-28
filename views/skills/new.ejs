@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Create New Skill</h1>
+    <!-- // action needs to match a endpoint(route) on your server
+	// It is where the form is submitting to -->
+
+	<!-- The method is the type of http request -->
+    <form action="/skills" method="POST">
+        <input type="text" name="skill" placeholder="skill">
+        <button type="submit">Create Skill</button>
+    </form>
+</body>
+</html>

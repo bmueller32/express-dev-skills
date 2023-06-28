@@ -7,15 +7,19 @@
     <link rel='stylesheet' href='/stylesheets/style.css' />
 </head>
 <body>
-  <a href="/">Home</a>
     <h1>All Skills</h1>
+  <a href="/skills/new">New Skill</a>
+   
      <ul>
-       <% skills.forEach(function(t) { %>
+       <% skills.forEach(function(s) { %>
          <li>
-           <a href="/skills/<%= t.id %>"><%= s.skill %><
-            a>
+           <a href="/skills/<%= s.id %>"> <%= s.skill %> </a>
              - 
            <%= s.done ? 'done' : 'not done' %>
+
+           <form method="" action="">
+            <button type="submit">X</button>
+          </form>
          </li>
        <% }); %>
      </ul>

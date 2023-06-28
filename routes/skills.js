@@ -1,9 +1,13 @@
-var express = require('express');
-var router = express.Router();
+const express = require('express');
+const router = express.Router();
+const skillsCtrl = require('../controllers/skills');
 
-/* GET users listing. */
-router.get('/', function(req, res, next) {
-  res.send('respond with a resource');
-});
+//All actuall paths start with "/skills"
+
+//Listen for HHTP requests // then they run the ctrl
+router.get('/', skillsCtrl.index);
+router.get('/new', skillsCtrl.new);
+router.get('/:id', skillsCtrl.show);
+router.post('/', skillsCtrl.create);
 
 module.exports = router;
