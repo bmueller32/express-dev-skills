@@ -11,7 +11,7 @@ module.exports = {
   getOne,
   create,
   deleteOne,
-  //update
+  update,
 };
 
 function update(id, todoUpdate) {
