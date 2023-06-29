@@ -7,18 +7,28 @@ module.exports = {
   show,
   new: newSkill,
   create,
+  delete: deleteOne,
 
   // optionally
   // index
 };
 
+function deleteOne(req, res) {
+  // req.params.id is the number in the url
+  // DELETE /skills/125223?_method=DELETE
+  // we define the id key on params in the routes folder
+  SkillModel.deleteOne(req.params.id);
+  // we always redirect
+  res.redirect("/skills");
+}
+
 function create(req, res) {
-	// Then we need to tell the model, take the information
-	// from the form and add it to the database
-	SkillModel.create(req.body)
-	
-	res.redirect('/skills'); // tells the client 
-	// make a get request to /todo
+  // Then we need to tell the model, take the information
+  // from the form and add it to the database
+  SkillModel.create(req.body);
+
+  res.redirect("/skills"); // tells the client
+  // make a get request to /todo
 }
 
 function newSkill(req, res) {

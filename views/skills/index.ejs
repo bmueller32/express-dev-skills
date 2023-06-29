@@ -1,27 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Express Skill</title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
-</head>
-<body>
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+  </head>
+  <body>
     <h1>All Skills</h1>
-  <a href="/skills/new">New Skill</a>
-   
-     <ul>
-       <% skills.forEach(function(s) { %>
-         <li>
-           <a href="/skills/<%= s.id %>"> <%= s.skill %> </a>
-             - 
-           <%= s.done ? 'done' : 'not done' %>
+    <a href="/skills/new">New Skill</a>
 
-           <form method="" action="">
-            <button type="submit">X</button>
-          </form>
-         </li>
-       <% }); %>
-     </ul>
-</body>
+    <ul>
+      <% skills.forEach(function(s) { %>
+      <li>
+        <a href="/skills/<%= s.id %>"> <%= s.skill %> </a>
+        - <%= s.done ? 'done' : 'not done' %>
+
+        <form
+          method="POST"
+          action="/skills/<% s.id %>?_method=DELETE"
+          class="delete-form"
+        >
+          <button type="submit">X</button>
+        </form>
+      </li>
+      <% }); %>
+    </ul>
+  </body>
 </html>
